@@ -17,10 +17,16 @@ namespace BibliotecaApi.Utilidades
             CreateMap<AutorCreacionDto, Autor>();
 
             CreateMap< Libro,LibrosDTO>();
+            CreateMap<Autor, AutorPathDTO>().ReverseMap();
+
             CreateMap<LibroCreacionDTO, Libro>();
 
             CreateMap<Libro,LibroConAutorDTO>()
                 .ForMember(dto => dto.AutorNombre, config => config.MapFrom(ent => MapearNombreCompleto(ent.Autor!)));
+
+            CreateMap<ComentariosCreacionDTO, Comentario>();
+            CreateMap<Comentario, ComentarioDTO>();
+            CreateMap<ComentarioPatchDTO,Comentario>().ReverseMap();    
         }
 
         private string MapearNombreCompleto(Autor autor)
