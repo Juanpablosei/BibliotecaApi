@@ -46,6 +46,7 @@ namespace BibliotecaApi.Controllers
         {
             var autor = await context.Autores
                 .Include(x => x.Libros)
+                    .ThenInclude(x=> x.Libro)
                 .FirstOrDefaultAsync(x => x.Id == id);
             if(autor is null)
             {

@@ -15,6 +15,7 @@ namespace BibliotecaApi.DTOs
         [PrimeraLetraMayuscula]
         public required string Apellidos { get; set; }
         public string? Identificacion { get; set; }
-        public List<Libro> Libros { get; set; } = new List<Libro>();
+        public List<LibroCreacionDTO> Libros { get; set; } = [];
+
     }
 }

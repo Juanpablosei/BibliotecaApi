@@ -6,6 +6,6 @@ namespace BibliotecaApi.DTOs
     {
         [Required]
         public required string Titulo { get; set; }
-        public int AutorId { get; set; }
+        public List<int> AutoresIds { get; set; } = [];
     }
 }
